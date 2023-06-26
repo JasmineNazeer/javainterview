@@ -19,8 +19,10 @@ public class CitizenController {
     private final CitizenService citizenService;
 
  @PostMapping(value = "/create")
- public void createCitizen (@RequestBody @Valid Citizen request){
-     citizenService.saveCitizen(request);
+ public ResponseEntity<Long> createCitizen (@RequestBody @Valid Citizen request){
+    Long id = citizenService.saveCitizen(request);
+     return new ResponseEntity<>(id, HttpStatus.CREATED);
+
 
  }
 

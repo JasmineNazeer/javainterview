@@ -14,10 +14,11 @@ public class CitizenService {
 
     private final CitizenRepository citizenRepository;
     private final MapperConfig mapperConfig;
-    public void saveCitizen(Citizen request) {
+    public Long saveCitizen(Citizen request) {
 
         CitizenDetails citizenDetails = mapperConfig.setModelMapper().map(request, CitizenDetails.class);
         citizenRepository.save(citizenDetails);
+        return citizenDetails.getId();
     }
 
 

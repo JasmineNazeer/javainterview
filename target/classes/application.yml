@@ -1,0 +1,16 @@
+server:
+  servlet:
+    context-path: /ikm
+  port: 8080
+
+app:
+  timezone: UTC
+spring:
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/DB_Citizen
+    username: postgres
+    password: ikm
+  jpa:
+    hibernate:
+      ddl-auto: update
